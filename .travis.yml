@@ -1,10 +1,16 @@
 language: node_js
 node_js:
-  - "stable"
+  - node
+  - lts/*
 cache:
   directories:
+    - ~/.npm
+    - .jest
     - node_modules
-script:
-  - expo start
 on:
   branch: master
+before_script:
+  - npm install -g npm@latest
+script:
+  - npm ci
+  - npx jest --ci
