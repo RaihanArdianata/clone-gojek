@@ -1,3 +1,10 @@
 language: node_js
-rvm:
- - javascript
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn start
+on:
+  branch: master
